@@ -2,6 +2,15 @@
 {% load i18n %}
 <html>
 {% block report %}
+<style>
+body{counter-reset:section -1;}
+h3:after
+{
+	
+counter-increment:section; 
+content:" " counter(section) ;
+}
+</style>
 <body>
 	<table align="center" border="1">
 		<tr>
@@ -14,10 +23,10 @@
 			<th>Chloride Content 1.10% Admixture</th>
 			<th>ControlMix</th>
 		</tr>
-	{% for test in cubee %}
+	{% for test in mixture %}
 	
 		<tr>	
-			<td>{{test.S_No}}</td>
+			<td><h3></h3></td>
 			<td>{{test.Physical_state}}</td>	
 			<td>{{test.Specific_Gravity}}</td>
 			<td>{{test.PH_Value}}</td>

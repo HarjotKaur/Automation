@@ -1,0 +1,46 @@
+{% extends "report/header.html" %}
+{% load i18n %}
+<html>
+{% block report %}
+<style>
+body{counter-reset:section -1;}
+h3:after
+{
+	
+counter-increment:section; 
+content:" " counter(section) ;
+}
+.Margin {
+text-align:center;
+}
+
+</style>
+<body>
+{% if walltiles and floortiles %}
+	
+	<table width="100%" align="center" border="1">
+		<tr>
+			<th>S.No</th>
+			<th>Test</th>
+			<th>Wall Tile</th>
+			<th>Floor Tile</th>
+			
+		</tr>
+	{% for test in walltiles and floortiles %}
+	
+		
+		<!--        <th class="Margin">{{test.S_No}}</th>
+		    -->   <tr>                 
+			<td class="Margin"><h3></h3></td></td>
+			<td class="Margin">Dimension</td>
+			<td class="Margin">{{test.Breaking_load}}</td>	
+			<td class="Margin">{{test.Mix}}</td>
+			<td class="Margin">{{test.Comp_strength}}</td>		
+		</tr>
+			
+	{% endfor  %}
+{% endif %}
+	</table>	
+</body>
+{% endblock %}
+</html>

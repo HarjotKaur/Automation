@@ -1,0 +1,140 @@
+{% extends "report/header.html" %}
+{% load i18n %}
+<html>
+{% block report %}
+<style>
+body{counter-reset:section ;}
+hp:after
+{
+	
+counter-increment:section; 
+content:" " counter(section) ;
+}
+.Margin {
+text-align:center;
+}
+
+</style>
+<body>
+{% if st %}
+	
+	<table width="80%" align="center" border="1">
+		<tr>
+			<th>S.No</th>
+			<th>Description of Test</th>
+			<th colspan="2">Acceptable limit ass per IS 383 % Passing</th>
+			<th colspan="2">Test Result</th>
+			
+		</tr>
+	
+                         {% for test in st %}
+	
+		
+		<!--        <th class="Margin">{{test.S_No}}</th>
+		    -->   <tr>                 
+			<td class="Margin"></td><hp></hp></td>
+			<td class="Margin">Sieve Analysis</td>
+			<td class="Margin">20mm</td>	
+			<td class="Margin">10mm</td>
+			<td class="Margin">{{ test.Sieve_Analysis }}</td>
+ 			<td class="Margin">{{ test.Sieve_Analysis }}</td>		
+		</tr>
+			
+			 <tr>   
+			<td class="Margin"></td></td>              
+			<td class="Margin">40mm</td>
+			<td class="Margin">100</td>	
+			<td class="Margin">-</td>
+			<td class="Margin">{{ test._40mm }}</td>
+ 			<td class="Margin">{{ test._40mm }}</td>		
+		</tr>
+                       <tr> 
+			<td class="Margin"></td></td>                
+			<td class="Margin">20mm</td>
+			<td class="Margin">95-100</td>	
+			<td class="Margin">100</td>
+			<td class="Margin">{{ test._20mm }}</td>
+ 			<td class="Margin">{{ test._20mm }}</td>		
+		</tr>
+                       <tr>                 
+			<td class="Margin"></td></td>
+			<td class="Margin">12.5</td>
+			<td class="Margin">-</td>	
+			<td class="Margin">90-100</td>
+			<td class="Margin">{{ test._12_5mm }}</td>
+ 			<td class="Margin">{{ test._12_5mm }}</td>		
+		</tr>
+			<tr> 
+			<td class="Margin"></td></td>                
+			<td class="Margin">10mm</td>
+			<td class="Margin">25-35</td>	
+			<td class="Margin">40-85</td>
+			<td class="Margin">{{ test._10mm }}</td>
+ 			<td class="Margin">{{ test._10mm }}</td>		
+		</tr>
+			<tr>   
+			<td class="Margin"></td></td>              
+			<td class="Margin">4.75mm</td>
+			<td class="Margin">0-10</td>	
+			<td class="Margin">0-10</td>
+			<td class="Margin">{{ test._4_75mm }}</td>
+ 			<td class="Margin">{{ test._4_75mm }}</td>		
+		</tr>
+			<tr>   
+			<td class="Margin"></td></td>              
+			<td class="Margin"></td>
+			<td class="Margin"></td>	
+			<td class="Margin"colspan="2"></td>
+			<td class="Margin"></td>
+ 			<td class="Margin"></td>		
+		</tr>
+			<tr>    
+			<td class="Margin"></td><hp></hp></td>             
+			<td class="Margin">Flakiness index</td>
+			<td class="Margin" colspan="2">25%</td>	
+			<td class="Margin">{{ test.Flakiness_index }}</td>
+ 			<td class="Margin">{{ test.Flakiness_index }}</td>		
+		</tr>
+			<tr> 
+			<td class="Margin"></td><hp></hp></td>               
+			<td class="Margin">Crushing Value</td>
+			<td class="Margin" colspan="2"></td>	
+			<td class="Margin">{{ test.Crushing_Value  }}</td>
+ 			<td class="Margin">{{ test.Crushing_Value }}</td>		
+		</tr>
+	{% endfor  %}
+{% endif %}
+	</table>	
+</body>
+{% endblock %}
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

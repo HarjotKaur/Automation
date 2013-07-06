@@ -17,6 +17,7 @@ from django.forms.fields import DateField, ChoiceField, MultipleChoiceField
 from tagging.fields import TagField
 from tagging.models import Tag
 from Automation.tcc.choices import *
+#import fts
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::#
 
 #::::::::::::::::::::::DEFINE THE MODELS HERE::::::::::::::::::::::::#
@@ -133,7 +134,7 @@ class Distribution(models.Model):
 	"""
 	** Distribution **
 	
-	Distribution Class define all didtribution of income that is to be 
+	Distribution Class define all distribution of income that is to be 
 	done.
 	
 	"""
@@ -290,7 +291,7 @@ class Job(models.Model):
 	letter_no = models.CharField(max_length=400,blank=True)
 	letter_date = models.DateField( blank=True, null=True)
 	tds = models.IntegerField(default="0")
-	discount = models.IntegerField(default="0")
+	discount = models.CharField(max_length=50,default="0")
 
 	def __unicode__(self):
           return self.id()
@@ -448,8 +449,7 @@ class ClientjobForm(forms.ModelForm):
 			material = kwargs['instance'].material
 		except KeyError:
 			material = 1 	
-		self.fields['test'].queryset=Test.objects.filter(material_id
-		=material)
+		self.fields['test'].queryset=Test.objects.filter(material_id=material)
 
 
 class editClientJobForm(forms.ModelForm):

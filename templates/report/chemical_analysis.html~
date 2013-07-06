@@ -2,6 +2,15 @@
 {% load i18n %}
 <html>
 {% block report %}
+<style>
+body{counter-reset:section -1;}
+h3:after
+{
+	
+counter-increment:section; 
+content:" " counter(section) ;
+}
+</style>
 <body>
 {% if chem %}
 
@@ -14,9 +23,9 @@
 			<th>Result</th>
 		</tr>
 	{% for chemical in chem %}
-	{{chemical.id}}
+	
 		<tr>
-			<td>{{chemical.s_no}}</td>	
+			<td><h3></h3></td>	
 			<td>{{chemical.description}}</td>
 			<td>{{chemical.result}}</td>		
 		</tr>	

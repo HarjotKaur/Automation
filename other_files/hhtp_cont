@@ -6,15 +6,15 @@ Order deny,allow
 Allow from all
 </Directory>
 
-Alias /static/ mPath/Automation/static/
+Alias /static/ /home/toshiba/Automation/static/
 
-<Directory mPath/Automation/static/>
+<Directory /home/toshiba/Automation/static/>
 Order deny,allow
 Allow from all
 </Directory>
 
-WSGIScriptAlias /automation mPath/Automation/apache/django.wsgi
-<Directory mPath/Automation/apache/>
+WSGIScriptAlias /automation /home/toshiba/Automation/apache/django.wsgi
+<Directory /home/toshiba/Automation/apache/>
 Order allow,deny
 Allow from all
 </Directory>

@@ -179,6 +179,8 @@ class TransportationAdmin(admin.ModelAdmin):
 	list_display = ('vehicleno','rate')
 	search_fields = ('vehicleno',)
 	list_filter = ['vehicleno']
+	
+
 
 
 admin.site.register(Payment, PaymentAdmin)

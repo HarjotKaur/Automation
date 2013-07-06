@@ -16,6 +16,6 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
     (r'^accounts/', include('registration.urls')),
-   
+    #(r'^ajax_search/',include('ajax_search.urls')), 
 )
 

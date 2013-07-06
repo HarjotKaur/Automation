@@ -15,6 +15,7 @@
 		<th>Address</th>
 		<th>City</th>
 		<th>Company</th>
+                <th>Site</th>
 
 		<th>Material</th>
 
@@ -42,6 +43,7 @@
 			<td>{{jobs.client__client__address}}</td>
 			<td>{{jobs.client__client__city}}</td>
 			<td>{{jobs.client__client__company}}</td>
+                        <td>{{jobs.site}}</td>
 			<td>
 			{% if jobs.report_type == 1 %}
 			{{jobs.clienteditjob__material__name}}

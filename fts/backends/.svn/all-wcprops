@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/25/trunk/fts/backends
+END
+sphinx.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/fts/backends/sphinx.py
+END
+simple.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25/trunk/fts/backends/simple.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/24/trunk/fts/backends/base.py
+END
+dummy.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/20/trunk/fts/backends/dummy.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/fts/backends/__init__.py
+END
+xapian.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/fts/backends/xapian.py
+END
+mysql.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/fts/backends/mysql.py
+END
+pgsql.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/25/trunk/fts/backends/pgsql.py
+END

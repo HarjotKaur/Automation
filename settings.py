@@ -12,10 +12,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db_name',                      # Or path to database file if using sqlite3.
-        'USER': 'db_user',                      # Not used with sqlite3.
-        'PASSWORD': 'db_password',
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'NAME': 'automation1',                     # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'h',
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -34,10 +34,10 @@ TIME_ZONE = 'Asia/Kolkata'
 LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
-DEFAULT_FROM_EMAIL = 'email_add'
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = 'email_user'
-EMAIL_HOST_PASSWORD = 'email_pass'
+DEFAULT_FROM_EMAIL = 'harjotmann1992@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'harjotmann1992@gmail.com'
+EMAIL_HOST_PASSWORD = 'japjimann'
 EMAIL_USE_TLS = True 
 EMAIL_PORT = "587"
 
@@ -113,7 +113,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'Automation.urls'
 
-TEMPLATE_DIRS = ("mPath/Automation/templates"
+TEMPLATE_DIRS = ("/home/toshiba/Automation/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -131,11 +131,18 @@ INSTALLED_APPS =(
     'django.contrib.admin',
     'registration',
     'Automation.tcc',
+    'Automation.report',
     'tagging',
+#   'fts',
+#    'ajax_search',
 )
 
 
 ACCOUNT_ACTIVATION_DAYS = 2
+AJAX_SEARCH_LIMIT = 8
+AJAX_SEARCH_HELPER = 'Automation.tcc.views.search_helper'
+SEARCH_RESULT_TEMPLATE = 'Automation/templates/tcc/search.html'
+
 
 
 LOGIN_REDIRECT_URL = '/automation/tcc/index'
