@@ -28,7 +28,10 @@ from Automation.tcc.forms import *
 from Automation.tcc.convert_function import *
 from django.core.mail import send_mail
 import fuzzy
-#import Automation.tcc.soundex.py
+from django.db.models.sql import constants
+from django.db.models.fields import __init__
+from django.db.backends.mysql import base
+#import Automation.tcc.soundex import *
 #from spec.soundex import soundex
 #from django import soundex
 #from ajax_search.forms import SearchForm
@@ -1466,7 +1469,7 @@ def search(request):
     results = None
     if ('q' in request.GET):
         query = request.GET['q']
-    results=UserProfile.objects.filter(first_name__sounds_like=query)
+    results=UserProfile.objects.filter(first_name__istartswith=query)
     #results=UserProfile.objects.exclude(first_name='').filter(first_name__istartswith=query)
     #results=UserProfile.objects.filter(where=["DIFF SOUNDEX(first_name), SOUNDEX(%s))"])
     return render_to_response('tcc/search.html',
